@@ -1,0 +1,6 @@
+FROM osixia/openldap:1.2.4
+EXPOSE 389
+EXPOSE 636
+ENV LDAP_ORGANISATION "homelab"
+ENV LDAP_DOMAIN="devinchristianson.com"
+ENV LDAP_ADMIN_PASSWORD="homelab$2019"

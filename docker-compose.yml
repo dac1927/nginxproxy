@@ -1,0 +1,12 @@
+version: "3.7"
+services: 
+    proxy:
+      build: ./proxy
+      volumes:
+        - ./proxy/nginx-ldap-auth.conf:/etc/nginc/conf.d/nginx-ldap-auth.conf:ro
+    backend:
+      build: ./backend
+    ldap-daemon:
+      build: ./ldap-daemon
+    open-ldap:
+      build: ./open-ldap
