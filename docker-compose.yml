@@ -1,18 +1,22 @@
 version: "3.7"
+
 services: 
+
     proxy:
       build: ./proxy
       depends_on:
         - backend
-        - ldap-daemon
-        - open-ldap
-      volumes:
-        - ./proxy/nginx-ldap-auth.conf:/etc/nginx/nginx.conf:ro
+        - ldapdaemon
+        - openldap
+      ports:
+        - "8080:80"
     backend:
       build: ./backend
-    ldap-daemon:
+    ldapdaemon:
       build: ./ldap-daemon
       depends_on:
-        - open-ldap
-    open-ldap:
+        - openldap
+    openldap:
       build: ./open-ldap
+networks: 
+  default:

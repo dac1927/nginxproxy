@@ -1,5 +1,3 @@
 FROM nginx AS proxy
-VOLUME /var/log/nginx/log
-EXPOSE 80
-EXPOSE 443
+COPY nginx-ldap-auth.conf /etc/nginx/nginx.conf
 EXPOSE 8081
