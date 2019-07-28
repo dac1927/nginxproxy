@@ -17,6 +17,21 @@ services:
       depends_on:
         - openldap
     openldap:
+      volumes:
+        - "ldapdb:/var/lib/ldap"
+        - "ldapconf:/etc/ldap/slapd.d"
       build: ./open-ldap
+      ports:
+        - "389:389"
+    ldapadmin:
+      build: ./ldapadmin
+      hostname: ldapadmin
+      ports:
+        - "6443:443"
+      depends_on:
+        - openldap
 networks: 
   default:
+volumes:
+  ldapdb:
+  ldapconf:
