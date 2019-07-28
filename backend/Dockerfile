@@ -1,4 +1,4 @@
-FROM python:2-alpine
+FROM python:2-alpine AS backend
 
 COPY backend-sample-app.py /usr/src/app/
 

@@ -1,4 +1,4 @@
-FROM python:2-alpine
+FROM python:2-alpine AS ldapdaemon
 
 COPY nginx-ldap-auth-daemon.py /usr/src/app/
 

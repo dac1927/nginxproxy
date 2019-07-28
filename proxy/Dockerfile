@@ -1,3 +1,3 @@
-FROM nginx
+FROM nginx AS proxy
 EXPOSE 80
 EXPOSE 443
