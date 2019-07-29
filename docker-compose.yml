@@ -21,6 +21,7 @@ services:
         - "ldapdb:/var/lib/ldap"
         - "ldapconf:/etc/ldap/slapd.d"
       build: ./open-ldap
+      hostname: openldap
       ports:
         - "389:389"
     ldapadmin:
